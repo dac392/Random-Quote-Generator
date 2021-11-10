@@ -1,0 +1,161 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #c880b7;
+  padding: 5px;
+  /* margin: 20px 40px; */
+}
+header {
+  margin: auto;
+  width: 95%;
+  max-width: 1100px;
+  padding: 5px;
+}
+.title {
+  color: white;
+  /* border-bottom: 4px solid white; */
+  text-decoration: underline;
+  margin: 10px 0px;
+  font-size: 3em;
+  text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
+}
+.load-quote {
+  width: 12em;
+  max-height: 75px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px 0px;
+
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+
+  font-size: 1.4em;
+  color: white;
+  background-color: #9f6ba0;
+  transition: all ease-in-out 500ms;
+}
+.load-quote:hover {
+  background-color: #5a2040;
+  /* color: #9f6ba0; */
+  border: none;
+}
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: auto;
+  border-left: 5px solid rgba(0, 0, 0, 0.3);
+  padding: 10px 15px 10px 20px;
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.quote-box {
+  text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
+  line-height: 0.5;
+}
+
+.quote {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  position: relative;
+  margin: 0;
+  margin-left: 10px;
+}
+.quote:before,
+.quote:after {
+  font-size: 3rem;
+  line-height: 2.5rem;
+  position: absolute;
+}
+
+.quote:before {
+  content: "“";
+  top: 0.1em;
+  left: -0.5em;
+}
+
+.quote:after {
+  content: "”";
+  bottom: -0.1em;
+  margin-left: 0.1em;
+  position: absolute;
+}
+
+.source {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-align: right;
+  margin-right: 4em;
+}
+
+.source:before {
+  content: "—";
+}
+
+.citation {
+  font-style: italic;
+}
+
+.citation:before {
+  content: ", ";
+  font-style: normal;
+}
+
+.year:before {
+  content: ", ";
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 25px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .title {
+    font-size: 3.5rem;
+    height: 73px;
+    margin-top: 20px;
+    /* margin-right: 5px; */
+    /* border-bottom: 4px solid rgba(0, 0, 0, 0.3); */
+  }
+  .load-quote {
+    font-size: 1.4rem;
+  }
+  .container {
+    padding: 25px 25px 15px 55px;
+    background: rgba(0, 0, 0, 0.1);
+    border-left: 5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0 4px 4px 0;
+  }
+  .quote {
+    font-size: 4rem;
+  }
+  .quote:before,
+  .quote:after {
+    font-size: 6rem;
+  }
+
+  .quote:before {
+    top: 0.25em;
+  }
+
+  .quote:after {
+    bottom: 0.1em;
+  }
+
+  .source {
+    font-size: 1.25rem;
+  }
+}
