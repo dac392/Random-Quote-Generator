@@ -1,7 +1,7 @@
 
 
 
-
+//holds all the quotes that we can cycle through
 const quotes = [
     {   quote:"I do not fear computers. I fear lack of them.",
         source:"Isaac Asimov",
@@ -33,8 +33,13 @@ const quotes = [
         year: 2016
     }
 ];
-const cycled_quotes = [0,0,0,0,0];
-let num_seen = 0;
+const cycled_quotes = [0,0,0,0,0];      //keeps track of the quotes that have been seen so that we can randomly cycle through all of the quotes without repeating before all quotes have been seen once.
+let num_seen = 0;                       //total number of quotes seen thus far
+
+/*
+    gets a random number of for an index of some quote not yet seen.
+    if all the quotes have been seen, it restarts the count so that we can randomly cycle through the quotes again.
+*/
 function getRandomQuote(){
     let randy;
     do{
@@ -42,9 +47,7 @@ function getRandomQuote(){
     }while(cycled_quotes[randy]!== 0);
     cycled_quotes[randy]++;
     num_seen++;
-    // console.log(`random: ${randy}`);
-    // console.log(`number of seen: ${num_seen}`);
-    // console.log(`quotes seen: ${cycled_quotes}`);
+
     if(num_seen === cycled_quotes.length){
         for(let i = 0; i < cycled_quotes.length; i++){
             cycled_quotes[i]--;
@@ -54,6 +57,10 @@ function getRandomQuote(){
     return quotes[randy];
 }
 
+/*
+    1. gets a random quote by calling the getRandomQuote function
+    2. builds an html string and insets it intp the element with id #quote-box
+*/
 function printQuote(){
     let obj = getRandomQuote();
     let html = ``;
@@ -61,4 +68,6 @@ function printQuote(){
     html+=`<p class="source">${obj.source}<span class="citation">${obj.citation}</span><span class="year">${obj.year}</span></p>`
     document.getElementById('quote-box').innerHTML = html;
 }
+
+//gets element by id #load-quote and adds an event listener of click and calls printQuotes function when trigered
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
